@@ -1,0 +1,233 @@
+// #include <iostream>
+// using namespace std;
+
+// class Facilities
+// {
+//     long long rollNumber;
+//     string department;
+//     int batch;
+//     string goodname;
+
+// public:
+//     int fees;
+//     int fee;
+//     Facilities() {}
+
+//     void initialization(void)
+//     {
+//         cout << "Enter all details Below: " << endl;
+
+//         cout << "Your good name: " << endl;
+//         cin >> goodname;
+
+//         cout << "Roll Number: " << endl;
+//         cin >> rollNumber;
+
+//         cout << "Department: " << endl;
+//         cin >> department;
+
+//         cout << "Batch: " << endl;
+//         cin >> batch;
+//         cout << endl;
+//     }
+
+//     void displayme(void)
+//     {
+//         cout << "Hostel Allotment Sucessfull for " << goodname << " of department " << department << " Batch " << batch
+//              << "." << endl;
+//         ;
+//     }
+
+//     void payment()
+//     {
+
+//         int card_number;
+//         int pin;
+//         int td;
+//         cout << "Please  Enter Your card number " << endl;
+//         cin >> card_number;
+
+//         cout << "Enter Four digit Pin: " << endl;
+//         cin >> pin;
+
+//         cout << "Payment Sucessfull With Transaction ID " << td << "." << endl;
+//         cout << "Hostel Booked !" << endl;
+//         displayme();
+//     }
+//     void with_mess()
+//     {
+//         cout << "Your Total payable cahrges are Rs. " << fees + fee << "/-" << endl;
+//         cout << "You will be proceded to payment counter..." << endl;
+//         payment();
+//     }
+//     void without_mess()
+//     {
+//         cout << "Your Total payable cahrges are Rs. " << fees << "/-" << endl;
+//         cout << "You will be proceded to payment counter" << endl;
+//         payment();
+//     }
+
+//     void mess(void)
+//     {
+//         fee = 14500;
+//         cout << "Mess Charges for  6 months is Rs. " << fee << "/-" << endl;
+//         with_mess();
+//     }
+
+//     void fees_for_attached_washroom(void)
+//     {
+//         fees = 45000;
+//         char chara;
+//         cout << "Mr./Mrs. " << goodname << " You have to pay Rs. " << fees << " for hostel allotment." << endl;
+//         cout << "Do You want to take mess facility ? (Press 'y' for yes and 'q' for quit)" << endl;
+//         cin >> chara;
+//         if (chara == 'y')
+//         {
+//             mess();
+//         }
+//         else if (chara == 'q')
+//         {
+//             cout << "Mr./Mrs. " << goodname << " You have to pay Rs. " << fees << " for hostel allotment." << endl;
+//         }
+//         else
+//         {
+//             cout << "Invalid Input Type !" << endl;
+//             fees_for_attached_washroom();
+//         }
+//     }
+
+//     void fees_for_non_attached_washroom(void)
+//     {
+//         fees = 42000;
+//         char chara;
+//         cout << "Mr./Mrs. " << goodname << " You have to pay Rs. " << fees << " for hostel allotment." << endl;
+//         cout << "Do You want to take mess facility ? (Press 'y' for yes and 'q' for quit)" << endl;
+//         cin >> chara;
+//         if (chara == 'y')
+//         {
+//             mess();
+//         }
+//         else if (chara == 'q')
+//         {
+//             cout << "Mr./Mrs. " << goodname << " You have to pay Rs. " << fees << " for hostel allotment." << endl;
+//             payment();
+//         }
+//         else
+//         {
+//             cout << "Invalid Input Type !" << endl;
+//             fees_for_non_attached_washroom();
+//         }
+//     }
+
+//     void armstrong()
+//     {
+//         cout << "Sorry , Armstrong Hostel is full" << endl;
+//         cout << "Please Select ant other hostel" << endl;
+//         hostel_facility();
+//     }
+//     void vasco()
+//     {
+//         cout << "Sorry , Vasco Hostel is full" << endl;
+//         cout << "Please Select ant other hostel" << endl;
+//         hostel_facility();
+//     }
+//     void columbus()
+//     {
+//         cout << "Sorry , Columbus Hostel is full" << endl;
+//         cout << "Please Select ant other hostel" << endl;
+//         hostel_facility();
+//     }
+//     void marco()
+//     {
+//         cout << "Sorry , Marco-Polo Hostel is full" << endl;
+//         cout << "Please Select ant other hostel" << endl;
+//         hostel_facility();
+//     }
+
+//     void Magellan(void)
+//     {
+//         int room;
+//         cout << "Please tell us that which room do you prefer" << endl;
+//         cout << "1. Four sharing with atttached washroom" << endl;
+//         cout << "2. Four sharing with common washroom" << endl;
+//         cin >> room;
+//         if (room == 1)
+//         {
+//             cout << "Room Number 902 is alloted to you." << endl;
+//             cout << "Please Proceed To the fees Counter " << endl;
+//             fees_for_attached_washroom();
+//         }
+//         else if (room = 2)
+//         {
+//             cout << "Room Number 802 is alloted to you." << endl;
+//             cout << "Please Proceed To the fees Counter " << endl;
+//             fees_for_non_attached_washroom();
+//         }
+//         else
+//         {
+//             cout << "Invalid Type, Choose Again: " << endl;
+//             hostel_facility();
+//         }
+//     }
+
+//     void hostel_facility(void)
+//     {
+//         int hostel;
+//         cout << "WHich hostel did you prefer ?" << endl;
+//         cout << "1. Magellan" << endl;
+//         cout << "2. Armstrong" << endl;
+//         cout << "3. Vasco" << endl;
+//         cout << "4. Columbus" << endl;
+//         cout << "5. Marco-Polo" << endl;
+//         cin >> hostel;
+//         if (hostel == 1)
+//         {
+//             Magellan();
+//         }
+//         else if (hostel == 2)
+//         {
+//             armstrong();
+//         }
+//         else if (hostel == 3)
+//         {
+//             vasco();
+//         }
+//         else if (hostel == 4)
+//         {
+//             columbus();
+//         }
+//         else if (hostel == 5)
+//         {
+//             marco();
+//         }
+//         else
+//         {
+//             cout << "Invalid Type, Choose Again: " << endl;
+//             hostel_facility();
+//         }
+//     }
+
+//     void display(void) {}
+// };
+
+// int main()
+// {
+//     Facilities f1;
+//     cout << "Welcome to University" << endl;
+//     f1.initialization();
+//     char hst;
+//     cout << "Do You want Hsotel Facility (Press 'y' for yes and 'n' for No)" << endl;
+//     cin >> hst;
+//     if (hst == 'y')
+//     {
+//         f1.hostel_facility();
+//     }
+//     else
+//     {
+//         cout << "Thanks !" << endl;
+//     }
+
+//     cout << "Enjoy Hostel Life !" << endl;
+
+//     return 0;
+// }
