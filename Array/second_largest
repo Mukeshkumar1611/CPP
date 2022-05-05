@@ -1,0 +1,32 @@
+// Wriyte a programe in cpp to write the second largest in an array.
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout << "Enter size of array: " << endl;
+    cin >> n;
+    int arr[n];
+    cout << "Enter Elements: " << endl;
+    for(int i=0;i<5;i++){
+        cin >> arr[i];
+    }
+    int largest = INT_MIN;
+    int second_largest = INT_MIN;
+
+    for(int i=1;i<n;i++){
+        if(arr[i] > largest){
+            second_largest = largest;
+            largest = arr[i];
+        }
+
+        if(arr[i] != largest && arr[i] > second_largest){
+            second_largest = arr[i];
+        }
+    }
+
+    cout <<"Second Largest Element Of this array is: "<< second_largest << endl;
+
+    return 0;
+}
