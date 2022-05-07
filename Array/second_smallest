@@ -1,0 +1,38 @@
+// Write a program to find the second smmallest.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter size of Array: " << endl;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    int smallest = arr[0];
+
+    for (int i = 1; i < 5; i++)
+    {
+        if (arr[i] < smallest)
+        {
+            smallest = arr[i];
+        }
+    }
+
+    int second_smallest = INT_MAX;
+    for (int i = 0; i < 5; i++)
+    {
+        if (arr[i] != smallest && arr[i] < second_smallest)
+        {
+            second_smallest = arr[i];
+        }
+    }
+
+    cout << "Second Smallest Element in this array is: " << second_smallest << endl;
+
+    return 0;
+}
