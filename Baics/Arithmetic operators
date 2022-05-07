@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2;
+    int sum, sub, multi, modul, divide;
+
+    cout << "Enter First Number: " << endl;
+    cin >> num1;
+    cout << "Enter Second Number: " << endl;
+    cin >> num2;
+
+    sum = num1 + num2;
+    sub = num1 - num2;
+    multi = num1 * num2;
+    modul = num1 % num2;
+    divide = num1 / num2;
+
+    cout << "Sum: " << sum << endl;
+    cout << "Subtraction: " << sub << endl;
+    cout << "Product: " << multi << endl;
+    cout << "Mdulus: " << modul << endl;
+    cout << "Divide: " << divide << endl;
+
+    return 0;
+}
