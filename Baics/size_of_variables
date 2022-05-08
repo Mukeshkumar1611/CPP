@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a; // declaration
+    a = 12;
+    cout << "size of a: " << sizeof(a) << endl;
+
+    float b;
+    cout << "size of b: " << sizeof(b) << endl;
+
+    char c;
+    cout << "size of c: " << sizeof(c) << endl;
+
+    double d;
+    cout << "size of d: " << sizeof(d) << endl;
+
+    long e;
+    cout << "size of e: " << sizeof(e) << endl;
+
+    long long f;
+    cout << "size of f: " << sizeof(f) << endl;
+
+    string h;
+    cout << "size of h: " << sizeof(h) << endl;
+
+    return 0;
+}
