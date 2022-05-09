@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b, c;
+    cout << "Enter First Number: " << endl;
+    cin >> a;
+    cout << "Enter Second Number: " << endl;
+    cin >> b;
+    cout << "Enter Third Number: " << endl;
+    cin >> c;
+
+    if (a > b)
+    {
+        if (a > c)
+        {
+            cout << a << " is Greatest." << endl;
+        }
+        else
+        {
+            cout << c << " is Greatest." << endl;
+        }
+    }
+    else
+    {
+        if (b > c)
+        {
+            cout << b << " is Greatest." << endl;
+        }
+        else
+        {
+            cout << c << " is Greatest." << endl;
+        }
+    }
+
+    return 0;
+}
