@@ -15,7 +15,7 @@ int main(){
     int largest = INT_MIN;
     int second_largest = INT_MIN;
 
-    for(int i=1;i<n;i++){
+    for(int i=0;i<n;i++){
         if(arr[i] > largest){
             second_largest = largest;
             largest = arr[i];
