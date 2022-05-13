@@ -1,58 +1,48 @@
-// Write a C++ program to sort a given array of 0s, 1s and 2s.
-// In the final array put all 0s first, then all 1s and all 2s in last.
+// SORT 0, 1, 2
 
 #include <iostream>
 using namespace std;
 int main()
 {
     int n;
-    cout << "Enter Size of Array: " << endl;
+    cout << "Enter size of Array: " << endl;
     cin >> n;
 
     int arr[n];
     cout << "Enter Elements: " << endl;
+
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
 
-    int count = 0;
-
-    for (int i = 0; i < n; i++)
+    int start = 0;
+    int end = n - 1;
+    int i = 0;
+    while (i <= end)
     {
         if (arr[i] == 0)
         {
-            count++;
+            int temp = arr[i];
+            arr[i] = arr[start];
+            arr[start] = temp;
+            start++;
+            i++;
         }
-    }
 
-    int count_ = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] == 1)
+        else if (arr[i] == 2)
         {
-            count_++;
+            int temp = arr[i];
+            arr[i] = arr[end];
+            arr[end] = temp;
+            end--;
+        }
+        else
+        {
+            i++;
         }
     }
 
-    int finl = count_ + count;
-    for (int i = 0; i < count; i++)
-    {
-        arr[i] = 0;
-    }
-
-    for (int i = count; i < finl; i++)
-    {
-        arr[i] = 1;
-    }
-
-    for (int i = finl; i < n; i++)
-    {
-        arr[i] = 2;
-    }
-
-    cout << "Your Output: " << endl;
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
@@ -60,3 +50,4 @@ int main()
 
     return 0;
 }
+
