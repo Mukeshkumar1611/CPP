@@ -1,0 +1,65 @@
+// Largest Row or column
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int rows, colums;
+    cout << "Enter Number Of Rows: " << endl;
+    cin >> rows;
+
+    cout << "Enter Number Of Columns: " << endl;
+    cin >> colums;
+
+    int arr[rows][colums];
+    cout << "Enter Elements: " << endl;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < colums; j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+
+    int row_sum = 0;
+    int row_index;
+    for (int j = 0; j < colums; j++)
+    {
+        int sum1 = 0;
+        for (int i = 0; i < rows; i++)
+        {
+            sum1 = sum1 + arr[i][j];
+        }
+        if (sum1 > row_sum)
+        {
+            row_sum = sum1;
+            row_index = j;
+        }
+    }
+
+    int col_sum = 0;
+    int col_index;
+    for (int i = 0; i < rows; i++)
+    {
+        int sum2 = 0;
+        for (int j = 0; j < colums; j++)
+        {
+            sum2 = sum2 + arr[i][j];
+        }
+        if (sum2 > col_sum)
+        {
+            col_sum = sum2;
+            col_index = i;
+        }
+    }
+
+    if (row_sum > col_sum)
+    {
+        cout << "Row : " << row_index << " Sum : " << row_sum << endl;
+    }
+    else
+    {
+        cout << "Column : " << col_index << " Sum : " << col_sum << endl;
+    }
+    return 0;
+}
