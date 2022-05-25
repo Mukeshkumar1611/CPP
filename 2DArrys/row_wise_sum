@@ -1,0 +1,35 @@
+// Row wise sum
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int rows, colums;
+    cout << "Enter Number of Rows: " << endl;
+    cin >> rows;
+
+    cout << "Enter Number of Columns: " << endl;
+    cin >> colums;
+
+    int arr[rows][colums];
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < colums; j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+
+    for (int j = 0; j < colums; j++)
+    {
+        int row_sum = 0;
+        for (int i = 0; i < rows; i++)
+        {
+            row_sum = row_sum + arr[i][j];
+        }
+        cout << row_sum << " ";
+    }
+
+    return 0;
+}
