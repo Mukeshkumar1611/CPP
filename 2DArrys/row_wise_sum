@@ -20,6 +20,8 @@ int main()
             cin >> arr[i][j];
         }
     }
+    
+    cout << "Row wise Sum : " << endl;
 
     for (int j = 0; j < colums; j++)
     {
