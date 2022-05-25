@@ -1,3 +1,4 @@
+
 // columm Wise Sum
 
 #include <iostream>
@@ -24,12 +25,13 @@ int main()
         }
     }
 
-    int col_sum = 0;
+    
 
     cout << "Column Wise Sum : " << endl;
 
     for (int i = 0; i < rows; i++)
     {
+        int col_sum = 0;
         for (int j = 0; j < colums; j++)
         {
             col_sum = col_sum + arr[i][j];
@@ -38,3 +40,4 @@ int main()
     }
     return 0;
 }
+
