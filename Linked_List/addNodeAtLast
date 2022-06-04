@@ -17,6 +17,7 @@ void addAtFront(Node **head, int val)
     if (*head == NULL)
     {
         *head = newNode;
+        return;
     }
 
     Node *temp = *head;
@@ -31,6 +32,7 @@ void addAtLast(Node **head, int val)
     if (*head == NULL)
     {
         *head = newNode;
+        return;
     }
     Node *temp = *head;
     while (temp->next != NULL)
