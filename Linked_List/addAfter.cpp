@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -14,7 +13,8 @@ void addAfter(Node *previous, int val)
     Node *newNode = new Node();
     if (previous == NULL)
     {
-        previous->next = newNode;
+        cout << "Previous cant be NULL.";
+        return;
     }
     newNode->data = val;
     newNode->next = previous->next;
@@ -37,7 +37,7 @@ int main()
     Node *third = new Node();
 
     head->data = 1;
-    head->next = second;
+    head->next = NULL;
 
     second->data = 2;
     second->next = third;
@@ -47,9 +47,8 @@ int main()
 
     printList(head);
     cout << endl;
-    addAfter(second, 2);
+    addAfter(head, 2);
     printList(head);
 
     return 0;
 }
-
