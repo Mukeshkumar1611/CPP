@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -47,6 +48,8 @@ int main()
     printList(head);
     cout << endl;
     addAfter(second, 2);
+    printList(head);
 
     return 0;
 }
+
