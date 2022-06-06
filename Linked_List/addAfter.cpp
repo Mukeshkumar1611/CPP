@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -37,7 +38,7 @@ int main()
     Node *third = new Node();
 
     head->data = 1;
-    head->next = NULL;
+    head->next = second;
 
     second->data = 2;
     second->next = third;
