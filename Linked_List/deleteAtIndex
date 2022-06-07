@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    Node *next;
+};
+
+void deleteAtHead(Node *&head)
+{
+
+    Node *todelete = head;
+    head = head->next;
+    delete todelete;
+}
+
+void deleteLastNode(Node *&head)
+{
+    if (head == NULL)
+    {
+        deleteAtHead(head);
+        return;
+    }
+    Node *currNode = head;
+    while (currNode->next->next != NULL)
+    {
+        currNode = currNode->next;
+    }
+    Node *todelete = currNode->next;
+    currNode->next = NULL;
+    delete todelete;
+}
+
+void deleteAtIdx(Node *&head, int idx)
+{
+    if (idx == 0)
+    {
+        deleteAtHead(head);
+        return;
+    }
+    // if(idx == size -1 ){deletelastNode(head)}
+    Node *currNode = head;
+    for (int i = 0; i < idx - 1; i++)
+    {
+        currNode = currNode->next;
+    }
+    Node *todelete = currNode->next;
+    currNode->next = currNode->next->next;
+    delete todelete;
+}
+
+void printList(Node *n)
+{
+    while (n != NULL)
+    {
+        cout << n->data << " ";
+        n = n->next;
+    }
+}
+
+int main()
+{
+    Node *head = new Node();
+    Node *second = new Node();
+    Node *third = new Node();
+
+    head->data = 1;
+    head->next = second;
+
+    second->data = 2;
+    second->next = third;
+
+    third->data = 3;
+    third->next = NULL;
+
+    printList(head);
+    cout << endl;
+    deleteAtIdx(head, 1);
+    cout << "After Deleteing : ";
+    printList(head);
+
+    return 0;
+}
