@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -54,7 +53,7 @@ int main()
     printList(head);
     cout << endl;
     addAtHead(head, 4);
-    cout << "After adding at head: ";
+    cout << "After adding at head : ";
     printList(head);
 
     return 0;
