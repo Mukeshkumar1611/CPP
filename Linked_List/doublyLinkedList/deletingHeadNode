@@ -9,7 +9,7 @@ public:
     Node *previous;
 };
 
-void deleteAtHead(Node *&head)
+void deleteAtHead(Node* &head)
 {
     if (head == NULL)
     {
