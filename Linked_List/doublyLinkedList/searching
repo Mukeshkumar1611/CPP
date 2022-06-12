@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -53,7 +52,7 @@ int main()
 
     printList(head);
     cout << endl;
-    cout << search(head, 4);
+    cout << search(head, 4); //searching 4 in linked list
 
     return 0;
 }
