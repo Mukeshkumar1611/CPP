@@ -9,7 +9,7 @@ public:
     Node *previous;
 };
 
-void deleteLastNode(Node *&head)
+void deleteLastNode(Node* &head)
 {
     Node *currNode = head;
     while (currNode->next->next != NULL)
@@ -48,9 +48,10 @@ int main()
     third->data = 3;
     third->next = NULL;
 
-    printList(head) ;
+    printList(head);
     cout << endl;
     deleteLastNode(head);
+    cout <<"After Deleting last node : ";
     printList(head);
 
     return 0;
