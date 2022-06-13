@@ -52,6 +52,7 @@ int main()
     printList(head);
     cout << endl;
     deleteAtHead(head);
+    cout <<"After deleting head node: ";
     printList(head);
 
     return 0;
