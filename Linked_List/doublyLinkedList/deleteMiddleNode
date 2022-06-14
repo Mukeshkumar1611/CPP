@@ -19,6 +19,7 @@ void deleteMid(Node *&head)
         fast = fast->next;
     }
     Node *todelete = slow;
+    
     slow->previous->next = slow->next;
     slow->next->previous = slow->previous;
     delete todelete;
@@ -53,8 +54,10 @@ int main()
 
     printList(head);
     cout << endl;
+    
     deleteMid(head);
-    cout << "After Deleting middle node : ";
+    cout << "After deleting middle node : ";
+    
     printList(head);
 
     return 0;
