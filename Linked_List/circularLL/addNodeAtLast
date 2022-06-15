@@ -1,0 +1,61 @@
+
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    Node *next;
+};
+
+void addAtLast(Node *&head, int val)
+{
+    Node *newNode = new Node();
+    newNode->data = val;
+    if (head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+    Node *currNode = head;
+    while (currNode->next != head)
+    {
+        currNode = currNode->next;
+    }
+    currNode->next = newNode;
+    newNode->next = head;
+}
+
+void printList(Node *&head)
+{
+    Node *currNode = head;
+    do
+    {
+        cout << currNode->data << " ";
+        currNode = currNode->next;
+    } while (currNode != head);
+}
+
+int main()
+{
+    Node *head = new Node();
+    Node *second = new Node();
+    Node *third = new Node();
+
+    head->data = 1;
+    head->next = second;
+
+    second->data = 2;
+    second->next = third;
+
+    third->data = 3;
+    third->next = head;
+
+    printList(head);
+    cout << endl;
+    addAtLast(head, 4);
+    printList(head);
+
+    return 0;
+}
