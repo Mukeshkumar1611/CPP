@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -55,6 +54,7 @@ int main()
     printList(head);
     cout << endl;
     addAtLast(head, 4);
+    cout <<"After adding node at last:";
     printList(head);
 
     return 0;
