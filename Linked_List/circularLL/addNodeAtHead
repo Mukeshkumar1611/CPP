@@ -57,7 +57,7 @@ int main()
 
     cout << endl;
     addAtFront(head, 9);
-    cout <<"After adding node at front :;
+    cout <<"After adding node at front :";
     printList(head);
     
     return 0;
