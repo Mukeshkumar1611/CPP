@@ -75,11 +75,11 @@ int main()
     third->next = head;
 
     printList(head);
+    
     cout << endl;
     addAtIdx(head, 9, 2);
     cout << "After adding node at given index :";
     printList(head);
 
     return 0;
-    
 }
