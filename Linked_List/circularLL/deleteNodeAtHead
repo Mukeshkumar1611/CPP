@@ -51,11 +51,12 @@ int main()
     third->data = 3;
     third->next = head;
 
+    cout << "Yout Linked List : ";
     printList(head);
 
     cout << endl;
     deleteAtHead(head);
-    cout << endl;
+    cout << "After deleting head node : ";
     printList(head);
 
     return 0;
