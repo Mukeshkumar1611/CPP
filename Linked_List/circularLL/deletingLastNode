@@ -1,0 +1,87 @@
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    Node *next;
+};
+
+void deleteAtHead(Node *&head)
+{
+    if (head == NULL)
+    {
+        cout << "Head cannot be NULL" << endl;
+        return;
+    }
+    Node *currNode = head;
+    while (currNode->next != head)
+    {
+        currNode = currNode->next;
+    }
+    Node *toDelete = head;
+    currNode->next = head->next;
+    head = head->next;
+    delete toDelete;
+}
+
+void deleteLastNode(Node *&head)
+{
+    if (head == NULL)
+    {
+        cout << "Head cant be NULL" << endl;
+        return;
+    }
+    if (head->next == NULL)
+    {
+        deleteAtHead(head);
+        return;
+    }
+    Node *currNode = head;
+    while (currNode->next->next != head)
+    {
+        currNode = currNode->next;
+    }
+    Node *toDelete = currNode->next;
+    currNode->next = head;
+    delete toDelete;
+}
+
+void printList(Node *&head)
+{
+    Node *currNode = head;
+    do
+    {
+        cout << currNode->data << " ";
+        currNode = currNode->next;
+    } while (currNode != head);
+}
+
+int main()
+{
+    Node *head = new Node();
+    Node *second = new Node();
+    Node *third = new Node();
+
+    head->data = 1;
+    head->next = second;
+
+    second->data = 2;
+    second->next = third;
+
+    third->data = 3;
+    third->next = head;
+
+    cout << "Yout Linked List : ";
+    printList(head);
+
+    cout << endl;
+    deleteLastNode(head);
+    
+    
+    cout << "After deleting last node : ";
+    printList(head);
+
+    return 0;
+}
