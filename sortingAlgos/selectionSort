@@ -35,8 +35,8 @@ int main()
         cin >> arr[i];
     }
 
-    selectionSort(arr, n);
-    cout << "Sorted array : ";
+    selectionSort(arr, n); 
+    cout << "Your sorted array : ";
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
