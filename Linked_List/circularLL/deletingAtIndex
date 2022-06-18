@@ -73,10 +73,9 @@ int main()
     printList(head);
 
     cout << endl;
-    deleteAtIdx(head, 2);
     
+    deleteAtIdx(head, 2);    
     cout << "After deleting last node : ";
-    
     printList(head);
 
     return 0;
