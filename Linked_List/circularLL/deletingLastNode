@@ -77,9 +77,8 @@ int main()
     printList(head);
 
     cout << endl;
+    
     deleteLastNode(head);
-    
-    
     cout << "After deleting last node : ";
     printList(head);
 
