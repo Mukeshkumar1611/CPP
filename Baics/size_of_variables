@@ -20,7 +20,7 @@ int main()
     cout << "size of e: " << sizeof(e) << endl;
 
     long long f;
-    cout << "size of f: " << sizeof(f) << endl;
+    cout << "size of f : " << sizeof(f) << endl;
 
     string h;
     cout << "size of h: " << sizeof(h) << endl;
