@@ -13,7 +13,7 @@ class Student
 };
 
 int main(){
-    Student s;
+    Student s;   //creating object  
     s.name = "John";
     s.roll_no = 2;
 
