@@ -1,4 +1,4 @@
-// To find Lenhgth Of a Character Array
+// To find Length of a Character Array
 
 #include <iostream>
 using namespace std;
