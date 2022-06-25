@@ -1,3 +1,5 @@
+// Half Numbers pyramid
+
 #include <iostream>
 using namespace std;
 
