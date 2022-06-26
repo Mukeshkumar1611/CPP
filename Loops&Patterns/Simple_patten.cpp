@@ -1,4 +1,5 @@
 // Simple pattern 
+
 // Write a C++ program to print
 // *
 // **
