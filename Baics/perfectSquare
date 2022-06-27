@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include <math.h>
-
 using namespace std;
+
 void checkperfect(int n)
 {
     int sqr = sqrt(n);
@@ -16,9 +16,11 @@ void checkperfect(int n)
         cout << "Not a Perfect sqaure";
     }
 }
+
 int main()
 {
     int n;
+    cout << "Enter Number : ";
     cin >> n;
     checkperfect(n);
 }
