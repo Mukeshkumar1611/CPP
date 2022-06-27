@@ -1,0 +1,22 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+void checkperfect(int n)
+{
+    int sqr = sqrt(n);
+    if (sqr * sqr == n)
+    {
+        cout << "Perefect Square";
+    }
+    else
+    {
+        cout << "Not a Perfect sqaure";
+    }
+}
+int main()
+{
+    int n;
+    cin >> n;
+    checkperfect(n);
+}
