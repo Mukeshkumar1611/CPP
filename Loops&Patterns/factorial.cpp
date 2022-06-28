@@ -1,4 +1,4 @@
-//  Factorial using while loop
+//  Find factorial using while loop
 
 #include <iostream>
 using namespace std;
