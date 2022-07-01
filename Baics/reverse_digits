@@ -1,3 +1,7 @@
+// Write a program to reverse a 3-digit number. E.g.-
+// Number : 132
+// Output : 231
+
 #include <iostream>
 using namespace std;
 int main()
