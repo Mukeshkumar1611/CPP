@@ -1,3 +1,7 @@
+// Write a program to calculate the sum of the digits of a 3-digit number.
+// Number : 132
+// Output : 6
+
 #include <iostream>
 using namespace std;
 int main()
