@@ -1,6 +1,5 @@
-
-
 // C++ Program to insert an Element in an array at last
+
 #include <iostream>
 using namespace std;
 
