@@ -16,9 +16,9 @@ int main()
         brr[i] = arr[j];
         j++;
     }
-
+    
     for(int i=0;i<10;i++){
-        cout << brr[i] << " ";
+        cout << brr[i] << " " ;
     }
     return 0;
 }
