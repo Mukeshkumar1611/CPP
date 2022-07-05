@@ -41,7 +41,6 @@ int main()
     cin >> x;
 
     cout << "Your Output: " << endl;
-
     tripletSum(arr, n, x);
 
     return 0;
