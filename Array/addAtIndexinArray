@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[100];
+    int n;
+    cout << "Enter size : ";
+    cin >> n;
+
+    cout << "Enter elements : ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    int pos, num;
+    cout << "Enter position and number : ";
+    cin >> pos >> num;
+
+    for (int i = n - 1; i >= pos; i--)
+    {
+        arr[i + 1] = arr[i];
+    }
+    arr[pos] = num;
+
+    cout << "Your updated array : ";
+
+    for (int i = 0; i <= n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
