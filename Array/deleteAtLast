@@ -1,0 +1,28 @@
+// Delete At Last
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[50];
+
+    int n;
+    cout << "Enter size : ";
+    cin >> n;
+
+    cout << "Enter elements : ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    
+    n = n - 1;
+
+    cout << "Your updated array : ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
