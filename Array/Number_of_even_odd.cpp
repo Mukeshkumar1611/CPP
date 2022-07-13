@@ -6,7 +6,8 @@
 // number of even numbers
 // number of zeroes.
 
-#include<iostream>
+
+#include <iostream>
 using namespace std;
 
 int main()
@@ -21,37 +22,49 @@ int main()
     cout << "Enter Number Of Elements: " << endl;
     cin >> n;
 
-    int z[n]; 
+    int z[n];
 
     cout << "Enter Elements: " << endl;
-    for(int i=0;i<5;i++){
+    for (int i = 0; i < n; i++)
+    {
         cin >> z[i];
 
-        if(z[i] > 0){
-            positive ++;
+        if (z[i] > 0)
+        {
+            positive++;
         }
 
-        else if(z[i] < 0){
+        else if (z[i] < 0)
+        {
             negative++;
         }
+    }
 
-        else{
-            zero++;
+    for (int i = 0; i < n; i++)
+    {
+        if (z[i] % 2 == 0)
+        {
+            even++;
         }
 
-        if(z[i] % 2==0){
-            even ++;
-        }
-
-        else{
+        else if (z[i] % 2 != 0)
+        {
             odd++;
         }
     }
 
+    for (int i = 0; i < n; i++)
+    {
+        if (z[i] == 0)
+        {
+            zero++;
+        }
+    }
+
     cout << "Positive: " << positive << endl;
-    cout << "Negative: " <<negative << endl;
+    cout << "Negative: " << negative << endl;
     cout << "Odd: " << odd << endl;
-    cout << "Even: " <<even << endl;
+    cout << "Even: " << even << endl;
     cout << "Zero: " << zero << endl;
 
     return 0;
