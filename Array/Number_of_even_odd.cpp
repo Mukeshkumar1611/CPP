@@ -1,4 +1,3 @@
-
 // Take 20 integer inputs from user and print the following:
 // number of positive numbers
 // number of negative numbers
