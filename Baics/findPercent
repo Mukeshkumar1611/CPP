@@ -1,0 +1,26 @@
+// A student will not be allowed to sit in exam if his/her attendence is less than 75%.
+// Take following input from user
+// Number of classes held
+// Number of classes attended.
+// And print
+// percentage of class attended
+// Is student is allowed to sit in exam or not.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+    int classesHeld, attended;
+    cout << "Enter Number of classes attended." << endl;
+    cin >> attended;
+    cout << "Enter Number of classes held: " << endl;
+    cin >> classesHeld;
+
+    int percent = (attended * 100) / classesHeld;
+
+    cout << percent;
+
+    return 0;
+}
