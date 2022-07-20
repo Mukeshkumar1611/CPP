@@ -1,0 +1,16 @@
+// Write a program to convert Fahrenheit into Celsius.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int fahrenheit;
+	cout << "Enter fahrenheit value : ";
+	cin >> fahrenheit;
+
+	int celcius = (fahrenheit - 32) * 5 / 9;
+	cout << "The celcius value is: " << celcius << endl;
+
+	return 0;
+}
