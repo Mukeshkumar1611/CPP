@@ -1,0 +1,20 @@
+// Write a program to input the value of the radius of a circle from keyboard and then
+// calculate its perimeter and area.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int radius;
+	cout << "Enter radius : ";
+	cin >> radius;
+
+	double pi = 3.14;
+
+	double perameter = 2 * (pi * radius);
+	cout << "Perameter : " << perameter << endl;
+
+	double area = pi * (radius * radius);
+	cout << "Area : " << area;
+}
