@@ -14,7 +14,7 @@
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
-<a href="https://linkedin.com/in/mukesh kumar" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mukesh kumar" height="30" width="40" /></a>
+<a href="[https://linkedin.com/in/mukesh kuma](https://www.linkedin.com/in/mukesh-kumar-85530722b/)r" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mukesh kumar" height="30" width="40" /></a>
 <a href="https://fb.com/mukesh kumar" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="mukesh kumar" height="30" width="40" /></a>
 <a href="https://instagram.com/_m_k_official" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="_m_k_official" height="30" width="40" /></a>
 <a href="https://www.codechef.com/users/mukesh_0895" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/codechef.svg" alt="mukesh_0895" height="30" width="40" /></a>
