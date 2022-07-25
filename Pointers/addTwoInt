@@ -1,0 +1,20 @@
+// 2. Write a program in C++ to add two numbers using pointers
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a;
+    cout << "Enter a : ";
+    cin >> a;
+    int *ptr1 = &a;
+
+    int b;
+    cout << "Enter b : ";
+    cin >> b;
+    int *ptr2 = &b;
+
+    cout << "Sum : " << *ptr1 + *ptr2 << endl;
+
+    return 0;
+}
