@@ -1,0 +1,29 @@
+// 1. Write a program in C++ to find the maximum number between two numbers using a pointer.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a;
+    cout << "Enter a : ";
+    cin >> a;
+
+    int *ptr1 = &a;
+
+    int b;
+    cout << "Enter b : ";
+    cin >> b;
+    int *ptr2 = &b;
+
+    cout << "Maximum : ";
+
+    if (*ptr1 > *ptr2)
+    {
+        cout << *ptr1 << endl;
+    }
+    else
+    {
+        cout << *ptr2 << endl;
+    }
+    return 0;
+}
