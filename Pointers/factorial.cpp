@@ -1,3 +1,5 @@
+// Write a program in C++ to find the factorial of a given number using pointers.
+
 #include <iostream>
 using namespace std;
 int main()
