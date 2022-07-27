@@ -1,4 +1,4 @@
-//  6.Write a program in C++ to compute the sum of all elements in an array using pointers
+// Write a program in C++ to compute the sum of all elements in an array using pointers
 
 #include <iostream>
 using namespace std;
