@@ -1,0 +1,19 @@
+// Default Constructor
+
+#include <iostream>
+using namespace std;
+
+class Person
+{
+public:
+    Person()
+    {
+        cout << "Hello" << endl;
+        cout << "Hey" << endl;
+    }
+};
+
+int main()
+{
+    Person obj;
+}
