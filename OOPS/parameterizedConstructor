@@ -1,0 +1,20 @@
+// Parameterized Constructor
+
+#include <iostream>
+using namespace std;
+
+class Person
+{
+public:
+    Person(int a)
+    {
+        cout << "Hello";
+        cout << "Hey";
+        cout << a;
+    }
+};
+
+int main()
+{
+    Person obj(5);
+}
