@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+class Person
+{
+public:
+    Person()
+    { // Constructor
+        cout << "helo" << endl;
+    }
+    ~Person() // Destructor
+    {
+        cout << "bye" << endl;
+    }
+};
+
+void fun()
+{
+    Person p1;
+}
+int main()
+{
+    fun();
+    cout << "C++" << endl;
+}
