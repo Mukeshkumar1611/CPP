@@ -1,0 +1,25 @@
+// Copy Constructor
+
+#include <iostream>
+using namespace std;
+
+class Person
+{
+public:
+    int a;
+    Person()
+    {
+        a = 10;
+    }
+    Person(Person &b)
+    {
+        a = b.a; // obj.a
+    }
+};
+
+int main()
+{
+    Person obj;
+    Person obj1(obj);
+    cout << obj1.a;
+}
