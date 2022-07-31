@@ -1,0 +1,29 @@
+// Multiplication
+
+#include <iostream>
+using namespace std;
+
+int multiplication(int a, int b)
+{
+    if (b > a)
+    {
+        multiplication(b, a);
+    }
+
+    if (a == 0 || b == 0)
+    {
+        return 0;
+    }
+
+    return a + multiplication(a, b - 1);
+}
+
+int main()
+{
+    int a, b;
+    cout << "Enter numbers : ";
+    cin >> a >> b;
+
+    cout <<"Ans : " <<multiplication(a, b) << endl;
+    return 0;
+}
