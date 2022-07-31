@@ -1,0 +1,23 @@
+// Number of Digits
+
+#include <iostream>
+using namespace std;
+
+int print(int n)
+{
+    if (n <= 9)
+    {
+        return 1;
+    }
+    return 1 + print(n / 10);
+}
+
+int main()
+{
+    int n;
+    cout << "Enter number : ";
+    cin >> n;
+
+    cout << "Number of digits : " << print(n) << endl;
+    return 0;
+}
