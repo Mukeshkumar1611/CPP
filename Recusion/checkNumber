@@ -1,0 +1,48 @@
+// Check Number
+
+#include <iostream>
+using namespace std;
+
+bool checkNumber(int arr[], int n, int x)
+{
+    if (n == 0)
+    {
+        return false;
+    }
+
+    else if (arr[0] == x)
+    {
+        return true;
+    }
+
+    return checkNumber(arr + 1, n - 1, x);
+}
+
+int main()
+{
+    int n;
+    cout << "Enter size of array : ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Enter elements : ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    int x;
+    cout << "Enter x : ";
+    cin >> x;
+
+    if (checkNumber(arr, n, x))
+    {
+        cout << "Present" << endl;
+    }
+    else
+    {
+        cout << "Not Present" << endl;
+    }
+
+    return 0;
+}
