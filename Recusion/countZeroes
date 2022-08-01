@@ -1,0 +1,38 @@
+// Count Zeroes
+
+#include <iostream>
+using namespace std;
+
+int countZeroes(int n)
+{
+    if (n <= 9)
+    {
+        if (n == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    int last = n % 10;
+    int count = 0;
+
+    if (last == 0)
+    {
+        count = 1;
+    }
+
+    return count + countZeroes(n / 10);
+}
+
+int main()
+{
+    int n;
+    cout << "Enter number : ";
+    cin >> n;
+    cout << "Number of zeroes : " << countZeroes(n) << endl;
+    return 0;
+}
