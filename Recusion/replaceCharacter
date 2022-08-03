@@ -1,0 +1,38 @@
+// Replace character
+
+#include <iostream>
+using namespace std;
+
+void replaceCharacter(char arr[], int start, char a, char b)
+{
+    if (arr[start] == '\0')
+    {
+        return;
+    }
+
+    if (arr[start] == a)
+    {
+        arr[start] = b;
+    }
+
+    replaceCharacter(arr, start + 1, a, b);
+}
+
+int main()
+{
+    char arr[100];
+    cout << "Enter string : ";
+    cin.getline(arr, 100);
+
+    char a, b;
+    cout << "Enter first character : ";
+    cin >> a;
+
+    cout << "Enter second character : ";
+    cin >> b;
+
+    cout << "Output : ";
+    replaceCharacter(arr, 0, a, b);
+    cout << arr << endl;
+    return 0;
+}
