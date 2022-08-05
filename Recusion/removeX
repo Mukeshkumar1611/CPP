@@ -1,0 +1,51 @@
+// Remove X
+
+#include <iostream>
+using namespace std;
+
+int length(char input[])
+{
+    int len = 0;
+    for (int i = 0; input[i] != '\0'; i++)
+    {
+        len++;
+    }
+    return len;
+}
+
+void removeX(char arr[], int start)
+{
+    if (arr[start] == '\0')
+    {
+        return;
+    }
+    removeX(arr, start + 1);
+
+    if (arr[start] == 'x')
+    {
+        int len = length(arr);
+        int i;
+        for (i = start + 1; i < len; i++)
+        {
+            arr[i - 1] = arr[i];
+        }
+        arr[i - 1] = '\0';
+    }
+}
+
+void removeX(char arr[])
+{
+    removeX(arr, 0);
+}
+
+int main()
+{
+    char arr[50];
+    cout << "Enter string : ";
+    cin.getline(arr, 50);
+
+    removeX(arr);
+
+    cout << "Output : " << arr << endl;
+    return 0;
+}
