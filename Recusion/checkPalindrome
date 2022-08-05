@@ -1,0 +1,55 @@
+// Check Palindrome
+
+#include <iostream>
+using namespace std;
+
+int length(char input[])
+{
+    int len = 0;
+    for (int i = 0; input[i] != '\0'; i++)
+    {
+        len++;
+    }
+    return len;
+}
+
+int isPalindrome(char arr[], int start, int end)
+{
+    if (arr[0] == '\0' || arr[1] == '\0')
+    {
+        return 1;
+    }
+
+    if (start >= end)
+    {
+        return 1;
+    }
+
+    if (arr[start] == arr[end])
+    {
+        return isPalindrome(arr, start + 1, end - 1);
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    char arr[100];
+    cout << "Enter string : ";
+    cin.getline(arr, 100);
+
+    int l = length(arr);
+
+    if (isPalindrome(arr, 0, l - 1))
+    {
+        cout << "True" << endl;
+    }
+    else
+    {
+        cout << "False" << endl;
+    }
+    return 0;
+}
