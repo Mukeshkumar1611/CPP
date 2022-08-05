@@ -1,0 +1,54 @@
+// All indexes of element 
+
+#include <iostream>
+using namespace std;
+
+void allIndexes(int arr[], int currIndex, int n, int x, int output[], int &k)
+{
+    if (currIndex == n)
+    {
+        return;
+    }
+
+    if (arr[currIndex] == x)
+    {
+        output[k] = currIndex;
+        k++;
+    }
+    allIndexes(arr, currIndex + 1, n, x, output, k);
+}
+
+int allIndexes(int arr[], int n, int x, int output[])
+{
+    int k = 0;
+    allIndexes(arr, 0, n, x, output, k);
+    return k;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter size of array : ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Enter elements : ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    int x;
+    cout << "Enter number for finfing indexes : ";
+    cin >> x;
+
+    int output[n];
+
+    int size = allIndexes(arr, n, x, output);
+    cout << "Output : ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << output[i] << " ";
+    }
+    return 0;
+}
