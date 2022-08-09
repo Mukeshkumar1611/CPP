@@ -9,7 +9,6 @@ void allIndexes(int arr[], int currIndex, int n, int x, int output[], int &k)
     {
         return;
     }
-
     if (arr[currIndex] == x)
     {
         output[k] = currIndex;
