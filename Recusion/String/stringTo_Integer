@@ -1,1 +1,42 @@
+// String to integer
 
+#include <iostream>
+using namespace std;
+
+int length(char arr[])
+{
+    if (arr[0] == '\0')
+    {
+        return 0;
+    }
+    int smallAns = length(arr + 1);
+    return 1 + smallAns;
+}
+
+int strToInt(char arr[], int last)
+{
+    if (last == 0)
+    {
+        return arr[last] - '0';
+    }
+
+    int smallAns = strToInt(arr, last - 1);
+    int a = arr[last] - '0';
+    return smallAns * 10 + a;
+}
+
+int strToInt(char arr[])
+{
+    int len = length(arr);
+    return strToInt(arr, len - 1);
+}
+
+int main()
+{
+    char arr[50];
+    cout << "Enter string : ";
+    cin.getline(arr, 50);
+    cout << "Output : " << strToInt(arr) << endl;
+
+    return 0;
+}
