@@ -1,0 +1,14 @@
+// Take Input
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    char b[10];
+    cout << "Enter val : ";
+    cin >> b;
+    cout << "Output : ";
+    cout << b;
+
+    return 0;
+}
