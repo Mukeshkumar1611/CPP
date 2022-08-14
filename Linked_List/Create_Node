@@ -1,4 +1,4 @@
-// Creating a node
+// Creating node
 
 #include <iostream>
 using namespace std;
