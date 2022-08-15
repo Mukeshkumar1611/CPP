@@ -1,3 +1,5 @@
+// Delete Node
+
 #include <iostream>
 using namespace std;
 
@@ -6,80 +8,83 @@ class Node
 public:
     int data;
     Node *next;
+
+    Node(int data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
 };
 
-void deleteAtHead(Node *&head)
+Node *takeInput()
 {
-
-    Node *todelete = head;
-    head = head->next;
-    delete todelete;
+    int data;
+    cin >> data;
+    Node *head = NULL;
+    Node *tail = NULL;
+    while (data != -1)
+    {
+        Node *newNode = new Node(data);
+        if (head == NULL)
+        {
+            head = newNode;
+            tail = newNode;
+        }
+        else
+        {
+            tail->next = newNode;
+            tail = newNode;
+        }
+        cin >> data;
+    }
+    return head;
 }
 
-void deleteLastNode(Node *&head)
+Node *deleteNode(Node *head, int pos)
 {
     if (head == NULL)
     {
-        deleteAtHead(head);
-        return;
+        return head;
     }
-    Node *currNode = head;
-    while (currNode->next->next != NULL)
+    if (pos == 0)
     {
-        currNode = currNode->next;
+        return head->next;
     }
-    Node *todelete = currNode->next;
-    currNode->next = NULL;
-    delete todelete;
+
+    Node *temp = head;
+    int count = 0;
+    while (temp != NULL && count < pos - 1)
+    {
+        ++count;
+        temp = temp->next;
+    }
+
+    if (temp == NULL || temp->next == NULL)
+    {
+        return head;
+    }
+    temp->next = temp->next->next;
+    return head;
 }
 
-void deleteAtIdx(Node *&head, int idx)
+void printList(Node *head)
 {
-    if (idx == 0)
+    while (head != NULL)
     {
-        deleteAtHead(head);
-        return;
-    }
-    // if(idx == size -1 ){deletelastNode(head)}
-    Node *currNode = head;
-    for (int i = 0; i < idx - 1; i++)
-    {
-        currNode = currNode->next;
-    }
-    Node *todelete = currNode->next;
-    currNode->next = currNode->next->next;
-    delete todelete;
-}
-
-void printList(Node *n)
-{
-    while (n != NULL)
-    {
-        cout << n->data << " ";
-        n = n->next;
+        cout << head->data << " ";
+        head = head->next;
     }
 }
 
 int main()
 {
-    Node *head = new Node();
-    Node *second = new Node();
-    Node *third = new Node();
-
-    head->data = 1;
-    head->next = second;
-
-    second->data = 2;
-    second->next = third;
-
-    third->data = 3;
-    third->next = NULL;
-
+    cout << "Enter nodes : ";
+    Node *head = takeInput();
+    int pos;
+    cout << "Enter index to delete node : ";
+    cin >> pos;
+    deleteNode(head, pos);
+    cout << "Updated list : ";
     printList(head);
-    cout << endl;
-    deleteAtIdx(head, 1);
-    cout << "After Deleteing : ";
-    printList(head);
-
     return 0;
 }
