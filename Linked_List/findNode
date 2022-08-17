@@ -1,4 +1,4 @@
-//  Find a node in linked list
+// Find a node in linked list
 
 #include <iostream>
 using namespace std;
@@ -38,14 +38,17 @@ Node *takeinput()
     return head;
 }
 
-int findNode(Node *head, int n)
+int findNode(Node *head, int val)
 {
-    Node *temp = head;
+    if (head == NULL)
+    {
+        return -1;
+    }
     int count = 0;
+    Node *temp = head;
     while (temp != NULL)
     {
-
-        if (temp->data == n)
+        if (temp->data == val)
         {
             return count;
         }
@@ -57,8 +60,10 @@ int findNode(Node *head, int n)
 
 int main()
 {
+    cout << "Enter nodes : ";
     Node *head = takeinput();
     int val;
+    cout << "Enter value : ";
     cin >> val;
     cout << findNode(head, val) << endl;
 }
