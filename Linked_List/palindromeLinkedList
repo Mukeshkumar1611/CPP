@@ -1,0 +1,83 @@
+// Palindrome linked list
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    Node *next;
+    Node(int data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
+};
+
+Node *takeinput()
+{
+    int data;
+    cin >> data;
+    Node *head = NULL, *tail = NULL;
+    while (data != -1)
+    {
+        Node *newnode = new Node(data);
+        if (head == NULL)
+        {
+            head = newnode;
+            tail = newnode;
+        }
+        else
+        {
+            tail->next = newnode;
+            tail = newnode;
+        }
+        cin >> data;
+    }
+    return head;
+}
+
+bool isPalindrome(Node *head)
+{
+    stack<int> s1;
+    Node *ptr = head;
+    while (ptr != NULL)
+    {
+        s1.push(ptr->data);
+        ptr = ptr->next;
+    }
+
+    ptr = head;
+    while (s1.size() != 0)
+    {
+        int s = s1.top();
+        if (ptr->data == s)
+        {
+            s1.pop();
+            ptr = ptr->next;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main()
+{
+    cout << "Enter nodes : ";
+    Node *head = takeinput();
+    bool ans = isPalindrome(head);
+
+    if (ans)
+        cout << "true";
+    else
+        cout << "false";
+
+    cout << endl;
+
+    return 0;
+}
