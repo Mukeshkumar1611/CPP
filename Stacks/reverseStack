@@ -1,0 +1,40 @@
+// Reverse stack
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void reverseStack(stack<int> &input, stack<int> &extra)
+{
+    while (input.size() != 0)
+    {
+        int a = input.top();
+        input.pop();
+        extra.push(a);
+    }
+    input = extra;
+}
+
+int main()
+{
+    stack<int> input, extra;
+    int size;
+    cout << "Enter size : ";
+    cin >> size;
+
+    cout << "Enter values : ";
+    for (int i = 0, val; i < size; i++)
+    {
+        cin >> val;
+        input.push(val);
+    }
+
+    cout << "Reversed stack : ";
+    reverseStack(input, extra);
+
+    while (!input.empty())
+    {
+        cout << input.top() << " ";
+        input.pop();
+    }
+}
