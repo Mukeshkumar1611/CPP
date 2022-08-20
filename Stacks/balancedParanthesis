@@ -1,0 +1,45 @@
+// Balanced Parenthesis
+
+#include <iostream>
+#include <string>
+#include <stack>
+
+using namespace std;
+
+bool isBalanced(string exp)
+{
+    stack<char> s;
+    for (int i = 0; i < exp.length(); i++)
+    {
+        if (exp[i] == '(')
+        {
+            s.push(exp[i]);
+        }
+        else if (exp[i] == ')')
+        {
+            if (s.empty())
+            {
+                return false;
+            }
+            char topChar = s.top();
+            s.pop();
+            if (exp[i] == ')' && topChar == '(')
+            {
+                continue;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return s.empty();
+}
+
+int main()
+{
+    string input;
+    cout << "Enter input : ";
+    cin >> input;
+    cout << ((isBalanced(input)) ? "true" : "false");
+}
