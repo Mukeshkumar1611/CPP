@@ -1,3 +1,5 @@
+// Deleting last node
+
 #include <iostream>
 using namespace std;
 
