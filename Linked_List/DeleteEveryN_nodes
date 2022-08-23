@@ -1,0 +1,112 @@
+// Delete every N nodes
+
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    Node *next;
+    Node(int data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
+};
+
+Node *takeinput()
+{
+    int data;
+    cin >> data;
+    Node *head = NULL, *tail = NULL;
+    while (data != -1)
+    {
+        Node *newnode = new Node(data);
+        if (head == NULL)
+        {
+            head = newnode;
+            tail = newnode;
+        }
+        else
+        {
+            tail->next = newnode;
+            tail = newnode;
+        }
+        cin >> data;
+    }
+    return head;
+}
+
+Node *skipMdeleteN(Node *head, int m, int n)
+{
+    if (head == NULL || m == 0)
+    {
+        return NULL;
+    }
+    if (n == 0)
+    {
+        return head;
+    }
+
+    Node *currNode = head;
+    Node *temp = NULL;
+    while (currNode != NULL)
+    {
+        int skip = 0;
+        int take = 0;
+
+        while (currNode != NULL && take < m)
+        {
+            if (temp == NULL)
+            {
+                temp = currNode;
+            }
+            else
+            {
+                temp->next = currNode;
+                temp = currNode;
+            }
+            currNode = currNode->next;
+            take++;
+        }
+
+        while (currNode != NULL && skip < n)
+        {
+            Node *newNode = currNode;
+            delete currNode;
+            currNode = newNode->next;
+            skip++;
+        }
+    }
+    if (temp != NULL)
+    {
+        temp->next = NULL;
+    }
+    return head;
+}
+
+void print(Node *head)
+{
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+int main()
+{
+    cout << "Enter nodes : ";
+    Node *head = takeinput();
+    int m, n;
+    cout << "Enter numbers : ";
+    cin >> m >> n;
+    head = skipMdeleteN(head, m, n);
+    cout << "Output : ";
+    print(head);
+
+    return 0;
+}
