@@ -1,0 +1,44 @@
+// Reverse queue (recursive)
+
+#include <iostream>
+#include <stack>
+#include <queue>
+using namespace std;
+
+void reverseQueue(queue<int> &input)
+{
+    if (input.size() <= 1)
+    {
+        return;
+    }
+    int front = input.front();
+    input.pop();
+    reverseQueue(input);
+    input.push(front);
+}
+
+int main()
+{
+    queue<int> q;
+    int size;
+    cout << "Enter size : ";
+    cin >> size;
+
+    cout << "Enter elements : ";
+
+    for (int i = 0, val; i < size; i++)
+    {
+        cin >> val;
+        q.push(val);
+    }
+
+    reverseQueue(q);
+    cout << "Reversed queue : ";
+    while (!q.empty())
+    {
+        cout << q.front() << " ";
+        q.pop();
+    }
+
+    cout << "\n";
+}
