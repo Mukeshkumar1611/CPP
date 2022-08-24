@@ -1,0 +1,36 @@
+// Programe to print prime numbers in a given interval.
+
+#include <iostream>
+using namespace std;
+
+int isPrime(int n)
+{
+    for (int i = 2; i < n; i++)
+    {
+        if (n % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main()
+{
+    int m;
+    cout << "Enter first number : ";
+    cin >> m;
+    int n;
+    cout << "Enter second number : ";
+    cin >> n;
+
+    cout << "Prinme numbers between " << m << " and " << n << ": " << endl;
+    for (int j = m; j < n; j++)
+    {
+        if (isPrime(j))
+        {
+            cout << j << endl;
+        }
+    }
+    return 0;
+}
