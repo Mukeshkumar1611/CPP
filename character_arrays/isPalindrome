@@ -1,0 +1,56 @@
+// Check whether a string is palindrome or not.
+
+#include <iostream>
+using namespace std;
+
+int length(char arr[])
+{
+    int count = 0;
+    for (int i = 0; arr[i] != '\0'; i++)
+    {
+        count++;
+    }
+    return count;
+}
+
+bool isPalindrome(char arr[], int length)
+{
+    int start = 0;
+    int end = length - 1;
+    while (start < end)
+    {
+        if (arr[start] == arr[end])
+        {
+            start++;
+            end--;
+            continue;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter size : ";
+    cin >> n;
+
+    char ab[n];
+    cout << "Enter str : ";
+    cin >> ab;
+
+    if (isPalindrome(ab, n))
+    {
+        cout << "Palindrome" << endl;
+    }
+    else
+    {
+        cout << "Not Palindrome" << endl;
+    }
+
+    return 0;
+}
