@@ -42,6 +42,5 @@ int main()
     cout << "Smallest: " << smallest << endl;
     cout << "Second Smallest: " << second_smallest << endl;
     cout << "Third Smallest: " << third_smallest << endl;
-
     return 0;
 }
