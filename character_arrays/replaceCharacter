@@ -1,0 +1,45 @@
+// Replace Character
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int count(char arr[])
+{
+    int count = 0;
+    for (int i = 0; arr[i] != '\0'; i++)
+    {
+        count++;
+    }
+    return count;
+}
+
+void change(char arr[], char a, char b)
+{
+    int x = count(arr);
+    for (int i = 0; i < x; i++)
+    {
+        if (arr[i] == a)
+        {
+            arr[i] = b;
+        }
+    }
+}
+
+int main()
+{
+    char input[1000];
+    char a, b;
+    cout << "Enter string : ";
+    cin >> input;
+    cout << "Enter character you want to replace : ";
+
+    cin >> a;
+    cout << "Enter character you want to replace with : ";
+    cin >> b;
+
+    change(input, a, b);
+    cout << "Output : " << input << endl;
+
+    return 0;
+}
