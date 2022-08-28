@@ -1,0 +1,43 @@
+// Trim Spaces
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int count(char arr[])
+{
+    int count = 0;
+    for (int i = 0; arr[i] != '\0'; i++)
+    {
+        count++;
+    }
+    return count;
+}
+
+void trimSpaces(char *arr)
+{
+    int len = count(arr);
+    char arr1[len];
+    int j = 0;
+
+    for (int i = 0; i < len; i++)
+    {
+        if (arr[i] != ' ')
+        {
+            arr1[j] = arr[i];
+            j++;
+        }
+    }
+    arr1[j] = '\0';
+    strcpy(arr, arr1);
+}
+
+int main()
+{
+    char input[1000];
+    cout << "Enter string : ";
+    cin.getline(input, 1000);
+    trimSpaces(input);
+    cout << "Output : ";
+    cout << input << endl;
+}
