@@ -1,0 +1,15 @@
+// cin.getline
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    char m[20];
+    char ab;
+    cout << "Enter the word where to stop : ";
+    cin >> ab;
+    cout << "Enter string : ";
+    cin.getline(m, 20, ab);
+    cout << "Output : " << m;
+    return 0;
+}
