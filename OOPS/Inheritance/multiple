@@ -1,34 +1,40 @@
 // Multiple inheritance
 
-// #include<iostream>
-// using namespace std;
+#include <iostream>
+using namespace std;
 
-// class A{
-//     public:
-//     void abc(){
-//         cout<< "Parent Class" << endl;
-//     }
-// };
+class A
+{
+public:
+    void abc()
+    {
+        cout << "Parent Class" << endl;
+    }
+};
 
-// class C{
-//     public:
-//     void classc(){
-//         cout << "Second class " << endl;
-//     }
-// };
+class C
+{
+public:
+    void classc()
+    {
+        cout << "Second class " << endl;
+    }
+};
 
-// class B : public A, public C{
-//     public:
-//     void abd(){
-//         cout << "First class " << endl;
-//     }
-// };
+class B : public A, public C
+{
+public:
+    void abd()
+    {
+        cout << "First class " << endl;
+    }
+};
 
-// int main()
-// {
-//     B obj;
-//     obj.abc();
-//     obj.abd();
-//     obj.classc();
-//     return 0;
-// }
+int main()
+{
+    B obj;
+    obj.abc();
+    obj.abd();
+    obj.classc();
+    return 0;
+}
