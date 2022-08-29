@@ -1,0 +1,30 @@
+// Single inheritance
+
+#include <iostream>
+using namespace std;
+
+class A
+{
+public:
+    void abc()
+    {
+        cout << "Parent Class" << endl;
+    }
+};
+
+class B : public A
+{
+public:
+    void abd()
+    {
+        cout << "child class " << endl;
+    }
+};
+
+int main()
+{
+    B obj;
+    obj.abd();
+    obj.abc();
+    return 0;
+}
