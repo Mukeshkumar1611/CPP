@@ -1,0 +1,38 @@
+// Multilevel inheritance
+
+#include <iostream>
+using namespace std;
+
+class A
+{
+public:
+    void abc()
+    {
+        cout << "Parent Class" << endl;
+    }
+};
+
+class B : public A
+{
+public:
+    void abd()
+    {
+        cout << "child class " << endl;
+    }
+};
+
+class C : public B
+{
+public:
+    void abe()
+    {
+        cout << "Grand Child " << endl;
+    }
+};
+
+int main()
+{
+    C obj;
+    obj.abc();
+    return 0;
+}
