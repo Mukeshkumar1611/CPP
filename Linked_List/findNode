@@ -62,8 +62,10 @@ int main()
 {
     cout << "Enter nodes : ";
     Node *head = takeinput();
+    
     int val;
     cout << "Enter value : ";
     cin >> val;
+    
     cout << findNode(head, val) << endl;
 }
