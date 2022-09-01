@@ -1,0 +1,12 @@
+// Simple pointer
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 17;
+    int *p = &a;
+    cout << *p << endl;
+    cout << p << endl;
+    return 0;
+}
