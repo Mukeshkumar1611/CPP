@@ -41,5 +41,6 @@ int main()
     string input;
     cout << "Enter input : ";
     cin >> input;
+    
     cout << ((isBalanced(input)) ? "true" : "false");
 }
