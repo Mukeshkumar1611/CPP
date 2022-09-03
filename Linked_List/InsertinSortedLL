@@ -1,0 +1,77 @@
+// Insert in sorted Linked List
+
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    Node *next;
+    Node(int data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
+};
+
+Node *takeInput()
+{
+    int data;
+    cin >> data;
+    Node *head = NULL, *tail = NULL;
+    while (data != -1)
+    {
+        Node *newnode = new Node(data);
+        if (head == NULL)
+        {
+            head = newnode;
+            tail = newnode;
+        }
+        else
+        {
+            tail->next = newnode;
+            tail = newnode;
+        }
+        cin >> data;
+    }
+    return head;
+}
+
+Node *adjustInLL(Node *head, int x)
+{
+    Node *newNode = new Node(x);
+    Node *temp = head;
+    while (temp->data < x && temp->next->data < x)
+    {
+        temp = temp->next;
+    }
+
+    Node *a = temp->next;
+    temp->next = newNode;
+    newNode->next = a;
+
+    return head;
+}
+
+void printList(Node *head)
+{
+    while (head)
+    {
+        cout << head->data << " ";
+        head = head->next;
+    }
+}
+
+int main()
+{
+    cout << "Enter Nodes : ";
+    Node *head = takeInput();
+    int x;
+    cout << "Enter node to insert : ";
+    cin >> x;
+    head = adjustInLL(head, x);
+    cout << "Output : ";
+    printList(head);
+    return 0;
+}
