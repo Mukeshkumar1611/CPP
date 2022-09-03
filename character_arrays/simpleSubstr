@@ -1,0 +1,26 @@
+// Simple substrings
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+void subStrings(char arr[])
+{
+    for (int i = 0; arr[i] != '\0'; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            cout << arr[j];
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    char b[20];
+    cout << "Enter string : ";
+    cin >> b;
+    cout << "Output : " << endl;
+    subStrings(b);
+}
