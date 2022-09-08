@@ -48,7 +48,6 @@ TreeNode<int> *takeInput()
             pendingNodes.push(child);
         }
     }
-
     return root;
 }
 
