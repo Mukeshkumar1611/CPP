@@ -9,7 +9,6 @@ void table(int n)
     while (i <= 10)
     {
         cout << n << " * " << i << " = " << n * i << endl;
-        ;
         i++;
     }
 }
