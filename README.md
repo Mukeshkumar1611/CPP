@@ -10,7 +10,7 @@
 
 - 📫 How to reach me **mukesh0895.be21@chitkara.edu.in**
 
-- ⚡ Fun fact **I think i am funny.**
+- ⚡ Fun fact **I think i am not funny.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
