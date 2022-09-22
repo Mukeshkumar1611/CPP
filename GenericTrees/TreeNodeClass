@@ -7,7 +7,7 @@ using namespace std;
 template <typename T>
 class TreeNode
 {
-public:
+    public:
     T data;
     vector<TreeNode<int> *> children;
 
