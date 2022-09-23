@@ -55,7 +55,7 @@ BinaryTreeNode<int> *takeInput()
         if (rightChild != -1)
         {
             BinaryTreeNode<int> *rightC = new BinaryTreeNode<int>(rightChild);
-            front->left = rightC;
+            front->right = rightC;
             pendingNodes.push(rightC);
         }
     }
