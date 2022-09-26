@@ -1,0 +1,159 @@
+// Level wise linkedlist
+
+#include <iostream>
+#include <queue>
+#include <vector>
+using namespace std;
+
+template <typename T>
+class Node
+{
+public:
+    T data;
+    Node<T> *next;
+    Node(T data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
+};
+
+template <typename T>
+class BinaryTreeNode
+{
+public:
+    T data;
+    BinaryTreeNode<T> *left;
+    BinaryTreeNode<T> *right;
+
+    BinaryTreeNode(T data)
+    {
+        this->data = data;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+BinaryTreeNode<int> *takeInput()
+{
+    int rootData;
+    cout << "Enter root data" << endl;
+    cin >> rootData;
+    if (rootData == -1)
+    {
+        return NULL;
+    }
+
+    BinaryTreeNode<int> *root = new BinaryTreeNode<int>(rootData);
+    queue<BinaryTreeNode<int> *> pendingNodes;
+    pendingNodes.push(root);
+
+    while (pendingNodes.size() != 0)
+    {
+        BinaryTreeNode<int> *front = pendingNodes.front();
+        pendingNodes.pop();
+
+        int leftChild;
+        cout << "Enter left child of " << front->data << endl;
+        cin >> leftChild;
+        if (leftChild != -1)
+        {
+            BinaryTreeNode<int> *leftC = new BinaryTreeNode<int>(leftChild);
+            front->left = leftC;
+            pendingNodes.push(leftC);
+        }
+
+        int rightChild;
+        cout << "Enter right child of " << front->data << endl;
+        cin >> rightChild;
+        if (rightChild != -1)
+        {
+            BinaryTreeNode<int> *rightC = new BinaryTreeNode<int>(rightChild);
+            front->right = rightC;
+            pendingNodes.push(rightC);
+        }
+    }
+    return root;
+}
+
+void print(Node<int> *head)
+{
+    Node<int> *temp = head;
+    while (temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+vector<Node<int> *> constructLinkedListForEachLevel(BinaryTreeNode<int> *root)
+{
+    if (root == NULL)
+    {
+        return {NULL};
+    }
+
+    queue<BinaryTreeNode<int> *> pendingNodes;
+    pendingNodes.push(root);
+    pendingNodes.push(NULL);
+
+    vector<Node<int> *> result;
+    Node<int> *head = NULL;
+    Node<int> *tail = NULL;
+
+    while (pendingNodes.size() != 0)
+    {
+        BinaryTreeNode<int> *front = pendingNodes.front();
+        pendingNodes.pop();
+
+        if (front == NULL)
+        {
+            if (pendingNodes.empty())
+            {
+                return result;
+            }
+            else
+            {
+                head = NULL;
+                tail = NULL;
+                pendingNodes.push(NULL);
+            }
+        }
+        else
+        {
+            Node<int> *temp = new Node<int>(front->data);
+            if (head == NULL)
+            {
+                head = temp;
+                tail = temp;
+                result.push_back(head);
+            }
+            else
+            {
+                tail->next = temp;
+                tail = temp;
+            }
+            if (front->left)
+            {
+                pendingNodes.push(front->left);
+            }
+            if (front->right)
+            {
+                pendingNodes.push(front->right);
+            }
+        }
+    }
+    return result;
+}
+
+int main()
+{
+    BinaryTreeNode<int> *root = takeInput();
+    vector<Node<int> *> ans = constructLinkedListForEachLevel(root);
+
+    for (int i = 0; i < ans.size(); i++)
+    {
+        print(ans[i]);
+    }
+}
