@@ -1,0 +1,86 @@
+// Check if a Binary Tree is BST
+
+#include <iostream>
+#include <queue>
+#include <climits>
+using namespace std;
+
+template <typename T>
+class BinaryTreeNode
+{
+public:
+    T data;
+    BinaryTreeNode<T> *left;
+    BinaryTreeNode<T> *right;
+
+    BinaryTreeNode(T data)
+    {
+        this->data = data;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+BinaryTreeNode<int> *takeInput()
+{
+    int rootData;
+    cout << "Enter root data" << endl;
+    cin >> rootData;
+    if (rootData == -1)
+    {
+        return NULL;
+    }
+
+    BinaryTreeNode<int> *root = new BinaryTreeNode<int>(rootData);
+    queue<BinaryTreeNode<int> *> pendingNodes;
+    pendingNodes.push(root);
+
+    while (pendingNodes.size() != 0)
+    {
+        BinaryTreeNode<int> *front = pendingNodes.front();
+        pendingNodes.pop();
+
+        int leftChild;
+        cout << "Enter left child of " << front->data << endl;
+        cin >> leftChild;
+        if (leftChild != -1)
+        {
+            BinaryTreeNode<int> *leftC = new BinaryTreeNode<int>(leftChild);
+            front->left = leftC;
+            pendingNodes.push(leftC);
+        }
+
+        int rightChild;
+        cout << "Enter right child of " << front->data << endl;
+        cin >> rightChild;
+        if (rightChild != -1)
+        {
+            BinaryTreeNode<int> *rightC = new BinaryTreeNode<int>(rightChild);
+            front->right = rightC;
+            pendingNodes.push(rightC);
+        }
+    }
+    return root;
+}
+
+bool isBST(BinaryTreeNode<int> *root, int min = INT_MIN, int max = INT_MAX)
+{
+    if (root == NULL)
+    {
+        return true;
+    }
+    if (root->data > max || root->data < min)
+    {
+        return false;
+    }
+    bool isleft = isBST(root->left, min, root->data);
+    bool isright = isBST(root->right, root->data, max);
+
+    return isleft and isright;
+}
+
+int main()
+{
+    BinaryTreeNode<int> *root = takeInput();
+    cout << (isBST(root) ? "True" : "False");
+}
