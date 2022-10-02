@@ -1,0 +1,164 @@
+// Remove from BST
+
+#include <iostream>
+#include <queue>
+using namespace std;
+
+template <typename T>
+class BinaryTreeNode
+{
+public:
+    T data;
+    BinaryTreeNode *left;
+    BinaryTreeNode *right;
+
+    BinaryTreeNode(T data)
+    {
+        this->data = data;
+        left = NULL;
+        right = NULL;
+    }
+    ~BinaryTreeNode()
+    {
+        delete left;
+        delete right;
+    }
+};
+
+BinaryTreeNode<int> *takeInput()
+{
+    int rootData;
+    cout << "Enter root data " << endl;
+    cin >> rootData;
+    if (rootData == -1)
+    {
+        return NULL;
+    }
+    BinaryTreeNode<int> *root = new BinaryTreeNode<int>(rootData);
+    queue<BinaryTreeNode<int> *> pendingNodes;
+    pendingNodes.push(root);
+    while (pendingNodes.size() != 0)
+    {
+        BinaryTreeNode<int> *front = pendingNodes.front();
+        pendingNodes.pop();
+        int leftchildData;
+        cout << "Enter left child of " << front->data << endl;
+        cin >> leftchildData;
+        ;
+        if (leftchildData != -1)
+        {
+            BinaryTreeNode<int> *leftChild = new BinaryTreeNode<int>(leftchildData);
+            front->left = leftChild;
+            pendingNodes.push(leftChild);
+        }
+
+        int rightChildData;
+        cout << "Enter right child of " << front->data << endl;
+        cin >> rightChildData;
+        if (rightChildData != -1)
+        {
+            BinaryTreeNode<int> *rightChild = new BinaryTreeNode<int>(rightChildData);
+            front->right = rightChild;
+            pendingNodes.push(rightChild);
+        }
+    }
+    return root;
+}
+
+BinaryTreeNode<int> *remove(BinaryTreeNode<int> *root, int data)
+{
+    if (root == NULL)
+    {
+        return NULL;
+    }
+    if (root->data > data)
+    {
+        root->left = remove(root->left, data);
+    }
+    else if (root->data < data)
+    {
+        root->right = remove(root->right, data);
+    }
+    else
+    {
+        if (root->left == NULL)
+        {
+            return root->right;
+        }
+        else if (root->right == NULL)
+        {
+            return root->left;
+        }
+        else
+        {
+            BinaryTreeNode<int> *temp = root->right;
+            while (temp != NULL and temp->left != NULL)
+            {
+                temp = temp->left;
+            }
+            root->data = temp->data;
+            root->right = remove(root->right, temp->data);
+        }
+    }
+    return root;
+}
+
+void printLevelWise(BinaryTreeNode<int> *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    queue<BinaryTreeNode<int> *> pendingNodes;
+    pendingNodes.push(root);
+    while (!pendingNodes.empty())
+    {
+        BinaryTreeNode<int> *frontNode = pendingNodes.front();
+        pendingNodes.pop();
+
+        if (frontNode == NULL)
+        {
+            cout << endl;
+            if (!pendingNodes.empty())
+            {
+                pendingNodes.push(NULL);
+            }
+        }
+        else
+        {
+            cout << frontNode->data << ":";
+            cout << "L:";
+            if (frontNode->left)
+            {
+                pendingNodes.push(frontNode->left);
+                cout << frontNode->left->data << ",";
+            }
+            else
+            {
+                cout << -1 << ",";
+            }
+            cout << "R:";
+            if (frontNode->right)
+            {
+                pendingNodes.push(frontNode->right);
+                cout << frontNode->right->data << endl;
+            }
+            else
+            {
+                cout << -1 << endl;
+            }
+        }
+    }
+}
+
+int main()
+{
+    BinaryTreeNode<int> *root = takeInput();
+    printLevelWise(root);
+    int data2;
+    cout << "Enter data to remove " << endl;
+    cin >> data2;
+    root = remove(root, data2);
+    printLevelWise(root);
+    return 0;
+}
