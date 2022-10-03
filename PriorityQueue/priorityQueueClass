@@ -32,12 +32,40 @@ public:
         return pq[0];
     }
 
+    void insert(int element)
+    {
+        pq.push_back(element);
+        int childIdx = pq.size() - 1;
+
+        while (childIdx > 0)
+        {
+            int parentIdx = (childIdx - 1) / 2;
+            if (pq[parentIdx] > pq[childIdx])
+            {
+                int temp = pq[parentIdx];
+                pq[parentIdx] = pq[childIdx];
+                pq[childIdx] = temp;
+            }
+            else
+            {
+                break;
+            }
+            childIdx = parentIdx;
+        }
+    }
 };
 
 int main()
 {
     PriorityQueue pq;
     cout << pq.getSize() << endl;
-    cout <<pq.isEmpty() << endl;
+    cout << pq.isEmpty() << endl;
+    pq.insert(1);
+    pq.insert(2);
+    pq.insert(3);
+    pq.insert(4);
+    pq.insert(5);
+    cout << pq.getSize() << endl;
+    cout << pq.isEmpty() << endl;
     return 0;
 }
