@@ -20,23 +20,28 @@ void intersection(int arr1[], int arr2[], int n1, int n2)
 int main()
 {
     int n1;
+    cout << "Enter size of first array : ";
     cin >> n1;
 
     int arr1[n1];
+    cout << "Enter elements : ";
     for (int i = 0; i < n1; i++)
     {
         cin >> arr1[i];
     }
 
     int n2;
+    cout << "Enter size of first array : ";
     cin >> n2;
 
     int arr2[n2];
+    cout << "Enter elements : ";
     for (int i = 0; i < n2; i++)
     {
         cin >> arr2[i];
     }
 
+    cout << "Output : ";
     intersection(arr1, arr2, n1, n2);
     return 0;
 }
