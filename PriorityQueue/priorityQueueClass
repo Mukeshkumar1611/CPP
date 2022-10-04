@@ -53,6 +53,44 @@ public:
             childIdx = parentIdx;
         }
     }
+    
+     int removeMin()
+    {
+        if (isEmpty())
+        {
+            return INT_MIN;
+        }
+        int ans = pq[0];
+        pq[0] = pq[pq.size() - 1];
+        pq.pop_back();
+
+        int parentIdx = 0;
+        int leftChildIdx = 2 * parentIdx + 1;
+        int rightCHildIdx = 2 * parentIdx + 2;
+
+        while (leftChildIdx < pq.size())
+        {
+            int minIdx = parentIdx;
+            if (pq[minIdx] > pq[leftChildIdx])
+            {
+                minIdx = leftChildIdx;
+            }
+            if (rightCHildIdx < pq.size() and pq[minIdx] > pq[rightCHildIdx])
+            {
+                minIdx = rightCHildIdx;
+            }
+            if (minIdx == parentIdx)
+            {
+                break;
+            }
+            swap(pq[minIdx], pq[parentIdx]);
+            parentIdx = minIdx;
+
+            leftChildIdx = 2 * parentIdx + 1;
+            rightCHildIdx = 2 * parentIdx + 2;
+        }
+        return ans;
+    }
 };
 
 int main()
