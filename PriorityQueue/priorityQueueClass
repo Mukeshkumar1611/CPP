@@ -105,5 +105,9 @@ int main()
     pq.insert(5);
     cout << pq.getSize() << endl;
     cout << pq.isEmpty() << endl;
+    cout << pq.removeMin() << endl;
+    cout << pq.removeMin() << endl;
+    cout << pq.getSize() << endl;
+    cout << pq.isEmpty() << endl;
     return 0;
 }
