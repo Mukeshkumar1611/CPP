@@ -26,5 +26,6 @@ public:
 
 int main()
 {
+    BinaryTreeNode<int>* root = new BinaryTreeNode<int>();
     return 0;
 }
