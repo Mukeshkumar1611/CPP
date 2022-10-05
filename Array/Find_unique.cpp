@@ -29,6 +29,5 @@ int main()
             cout <<"Unique Element in array is : " <<arr[i];
         }
     }
-
     return 0;
 }
