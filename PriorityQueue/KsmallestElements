@@ -1,0 +1,62 @@
+// Code : K smallest Elements
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include<queue>
+#include<vector>
+using namespace std;
+
+vector<int> kSmallest(int arr[], int n, int k)
+{
+    priority_queue<int> pq;
+    for(int i=0;i<k;i++)
+    {
+        pq.push(arr[i]);
+    }
+    
+    for(int i=k;i<n;i++)
+    {
+        if(arr[i] < pq.top())
+        {
+            pq.pop();
+            pq.push(arr[i]);
+        }
+    }
+    vector<int> output;
+    while(!pq.empty())
+    {
+        output.push_back(pq.top());
+        pq.pop();
+    }
+    return output;
+}
+
+int main()
+{
+    int size;
+    cout << "Enter size of array : ";
+    cin >> size;
+
+    int *input = new int[size];
+    cout << "Enter elements : "; 
+    for (int i = 0; i < size; i++)
+    {
+        cin >> input[i];
+    }
+
+    int k;
+    cout << "Enter value of k ";
+    cin >> k;
+
+    vector<int> output = kSmallest(input, size, k);
+    sort(output.begin(), output.end());
+
+    cout << "Output : ";
+    for (int i = 0; i < output.size(); i++)
+    {
+        cout << output[i] << " ";
+    }
+
+    delete[] input;
+}
