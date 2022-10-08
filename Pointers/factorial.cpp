@@ -15,6 +15,6 @@ int main()
     {
         *facptr = *facptr * i;
     }
-    cout << "Factorial : " << *facptr;
+    cout << "Factorial : " << *facptr << endl;
     return 0;
 }
