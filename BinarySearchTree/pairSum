@@ -113,6 +113,7 @@ int main()
     int sum;
     cout << "Enter sum : ";
     cin >> sum;
+    
     pairSum(root, sum);
     delete root;
 }
