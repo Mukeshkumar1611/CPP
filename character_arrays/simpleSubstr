@@ -21,6 +21,7 @@ int main()
     char b[20];
     cout << "Enter string : ";
     cin >> b;
+    
     cout << "Output : " << endl;
     subStrings(b);
 }
