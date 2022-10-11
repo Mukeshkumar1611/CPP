@@ -7,9 +7,8 @@ using namespace std;
 
 vector<int> mergeKSortedArrays(vector<vector<int> *> input)
 {
-    vector<int> output;
     priority_queue<int, vector<int>, greater<int>> pq;
-
+    vector<int> output;
     for (int i = 0; i < input.size(); i++)
     {
         for (int j = 0; j < input[i]->size(); j++)
@@ -29,6 +28,7 @@ vector<int> mergeKSortedArrays(vector<vector<int> *> input)
 int main()
 {
     int k;
+    cout << "Enter number of arrays : ";
     cin >> k;
 
     vector<vector<int> *> input;
@@ -36,10 +36,9 @@ int main()
     for (int j = 1; j <= k; j++)
     {
         int size;
-        cout << "Enter size : ";
+        cout << "Enter size of array : ";
         cin >> size;
         vector<int> *current = new vector<int>;
-
         cout << "Enter elements : ";
         for (int i = 0; i < size; i++)
         {
@@ -52,11 +51,10 @@ int main()
     }
 
     vector<int> output = mergeKSortedArrays(input);
-
+    cout << "Output : ";
     for (int i = 0; i < output.size(); i++)
     {
-        cout << "Output : " << output[i] << " ";
+        cout << output[i] << " ";
     }
-
     return 0;
 }
