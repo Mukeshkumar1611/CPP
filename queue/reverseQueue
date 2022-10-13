@@ -44,6 +44,5 @@ int main()
         cout << q.front() << " ";
         q.pop();
     }
-
     cout << "\n";
 }
