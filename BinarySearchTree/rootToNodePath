@@ -104,6 +104,7 @@ vector<int> *getRootToNodePath(BinaryTreeNode<int> *root, int data)
 int main()
 {
     BinaryTreeNode<int> *root = takeInput();
+    
     int data;
     cout << "Enter data : ";
     cin >> data;
