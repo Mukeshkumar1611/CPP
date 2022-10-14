@@ -26,6 +26,6 @@ int main()
         cin >> arr[i];
     }
 
-    cout << "Sum of Array : " << sumArray(arr, n) << endl;
+    cout << "Sum of array is : " << sumArray(arr, n) << endl;
     return 0;
 }
