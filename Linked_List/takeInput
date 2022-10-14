@@ -52,7 +52,9 @@ void printList(Node *head)
 
 int main()
 {
+    cout << "Enter nodes : ";
     Node *head = takeInput();
+    cout << "Printed List : ";
     printList(head);
     return 0;
 }
