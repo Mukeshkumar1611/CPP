@@ -20,6 +20,7 @@ int main()
     int m;
     cout << "Enter first number : ";
     cin >> m;
+    
     int n;
     cout << "Enter second number : ";
     cin >> n;
