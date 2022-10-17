@@ -6,7 +6,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=mukeshkumar1611" alt="mukeshkumar1611" /></a> </p>
 
-- 🌱 I’m currently learning **Programming Languages**
+- 🌱 I’m currently learning **DSA**
 
 - 📫 How to reach me **mukesh0895.be21@chitkara.edu.in**
 
