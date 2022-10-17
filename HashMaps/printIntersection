@@ -1,0 +1,56 @@
+// Print Intersection using unordered maps.
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+void printIntersection(int *arr1, int *arr2, int n, int m)
+{
+    unordered_map<int, int> freq;
+    for (int i = 0; i < n; i++)
+    {
+        freq[arr1[i]]++;
+    }
+
+    for (int i = 0; i < m; i++)
+    {
+        if (freq.count(arr2[i]) == true and freq[arr2[i]] > 0)
+        {
+            cout << arr2[i] << " ";
+            freq[arr2[i]]--;
+        }
+    }
+}
+
+int main()
+{
+    int size1;
+    cout << "Enter size of first array : ";
+    cin >> size1;
+
+    cout << "Enter elements : ";
+    int *arr1 = new int[size1];
+
+    for (int i = 0; i < size1; i++)
+    {
+        cin >> arr1[i];
+    }
+
+    int size2;
+    cout << "Enter size of second array : ";
+    cin >> size2;
+
+    cout << "Enter elements : ";
+    int *arr2 = new int[size2];
+
+    for (int i = 0; i < size2; i++)
+    {
+        cin >> arr2[i];
+    }
+    cout << "Output : ";
+    printIntersection(arr1, arr2, size1, size2);
+
+    delete[] arr1;
+    delete[] arr2;
+    return 0;
+}
