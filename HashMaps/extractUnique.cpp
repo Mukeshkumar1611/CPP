@@ -34,8 +34,6 @@ int main()
     string ab;
     cout << "Enter string : ";
     cin >> ab;
-
     cout << "Output : " << uniqueChar(ab) << endl;
-
     return 0;
 }
