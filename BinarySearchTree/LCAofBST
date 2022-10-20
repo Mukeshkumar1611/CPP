@@ -95,9 +95,11 @@ int getLCA(BinaryTreeNode<int> *root, int a, int b)
 int main()
 {
     BinaryTreeNode<int> *root = takeInput();
+    
     int a, b;
     cout << "Enter a and b " << endl;
     cin >> a >> b;
+    
     cout << getLCA(root, a, b);
     delete root;
 }
