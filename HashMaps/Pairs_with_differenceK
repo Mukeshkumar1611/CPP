@@ -1,0 +1,46 @@
+// Pairs with difference K
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int getPairsWithDifferenceK(int *arr, int n, int k)
+{
+    unordered_map<int, int> freq;
+    int count = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int complement = arr[i] + k;
+        count += freq[complement];
+        if (k != 0)
+        {
+            complement = arr[i] - k;
+            count += freq[complement];
+        }
+        freq[arr[i]]++;
+    }
+    return count;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter size of array : ";
+    cin >> n;
+
+    int *input = new int[n];
+    cout << "Enter elements : ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> input[i];
+    }
+
+    int k;
+    cout << "Enter value of k : ";
+    cin >> k;
+
+    cout << "Output : " << endl;
+    cout << getPairsWithDifferenceK(input, n, k);
+
+    delete[] input;
+}
