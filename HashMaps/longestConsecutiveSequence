@@ -31,7 +31,6 @@ vector<int> longestConsecutiveIncreasingSequence(int *arr, int n)
         }
         i++;
     }
-
     vector<int> ans;
     ans.push_back(maxValue);
     if (maxFreq > 1)
