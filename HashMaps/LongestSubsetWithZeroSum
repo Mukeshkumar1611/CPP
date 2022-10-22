@@ -1,0 +1,51 @@
+// Longest subset zero sum
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int lengthOfLongestSubsetWithZeroSum(int *arr, int size)
+{
+    unordered_map<int, int> freq;
+    int i = -1;
+    int mLen = 0;
+    int sum = 0;
+    freq[sum] = i;
+
+    while (i < n - 1)
+    {
+        i++;
+        sum += arr[i];
+        if (freq.count(sum) == false)
+        {
+            freq[sum] = i;
+        }
+        else
+        {
+            int len = i - freq.at(sum);
+            if (len > mLen)
+            {
+                mLen = len;
+            }
+        }
+    }
+    return mLen;
+}
+
+int main()
+{
+    int size;
+    cout << "Enter size of array : ";
+    cin >> size;
+
+    int *arr = new int[size];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    cout << "Output " << lengthOfLongestSubsetWithZeroSum(arr, size) << endl;
+
+    delete[] arr;
+    return 0;
+}
