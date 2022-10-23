@@ -46,7 +46,6 @@ int main()
             cin >> a;
             current->push_back(a);
         }
-
         input.push_back(current);
     }
 
