@@ -57,6 +57,5 @@ int main()
     {
         cout << output[i] << " ";
     }
-
     delete[] input;
 }
