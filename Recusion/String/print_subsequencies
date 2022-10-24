@@ -19,8 +19,9 @@ int main()
     string input;
     cout << "Enter string : ";
     cin >> input;
-
+    
     string output = "";
+    
     cout << "Output : " << endl;
     print_subs(input, output);
     return 0;
