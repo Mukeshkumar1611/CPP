@@ -54,7 +54,7 @@ public:
         }
     }
     
-     int removeMin()
+    int removeMin()
     {
         if (isEmpty())
         {
