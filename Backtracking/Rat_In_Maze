@@ -1,0 +1,66 @@
+// Rat in maze
+
+#include <iostream>
+using namespace std;
+
+void printSolution(int **solution, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << solution[i][j] << " ";
+        }
+    }
+    cout << endl;
+}
+
+void mazeHelp(int **arr, int n, int **solution, int i, int j)
+{
+    if (i == n - 1 and j == n - 1)
+    {
+        solution[i][j] = 1;
+        printSolution(solution, n);
+        solution[i][j] = 0;
+        return;
+    }
+
+    if (i < 0 or i >= n or j < 0 or j >= n or arr[i][j] == 0 or solution[i][j] == 1)
+    {
+        return;
+    }
+
+    solution[i][j] = 1;
+    mazeHelp(arr, n, solution, i + 1, j);
+    mazeHelp(arr, n, solution, i - 1, j);
+    mazeHelp(arr, n, solution, i, j + 1);
+    mazeHelp(arr, n, solution, i, j - 1);
+    solution[i][j] = 0;
+}
+
+void ratInMaze(int **arr, int n)
+{
+    int **solution = new int *[n];
+    for (int i = 0; i < n; i++)
+    {
+        solution[i] = new int[n];
+    }
+    mazeHelp(arr, n, solution, 0, 0);
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    int **arr = new int *[n];
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = new int[n];
+        for (int j = 0; j < n; j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+    ratInMaze(arr, n);
+    return 0;
+}
