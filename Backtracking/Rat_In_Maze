@@ -24,7 +24,6 @@ void mazeHelp(int **arr, int n, int **solution, int i, int j)
         solution[i][j] = 0;
         return;
     }
-
     if (i < 0 or i >= n or j < 0 or j >= n or arr[i][j] == 0 or solution[i][j] == 1)
     {
         return;
