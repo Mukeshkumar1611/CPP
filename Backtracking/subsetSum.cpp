@@ -1,4 +1,4 @@
-// Subset sum
+// Subset Sum
 
 #include<bits/stdc++.h>
 using namespace std;
