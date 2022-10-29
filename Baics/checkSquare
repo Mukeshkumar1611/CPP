@@ -7,10 +7,10 @@ int main()
 {
     int length, breadth;
     
-    cout << "Enter Length: ";
+    cout << "Enter Length: " << endl;
     cin >> length;
     
-    cout << "Enter Breadth: ";
+    cout << "Enter Breadth: " << endl;
     cin >> breadth;
 
     if (length == breadth)
