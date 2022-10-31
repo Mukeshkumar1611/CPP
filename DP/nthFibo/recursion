@@ -19,6 +19,7 @@ int main()
     int n;
     cout << "Enter number : ";
     cin >> n;
+    
     cout << "Nth fibonacci number is : ";
     cout << fibo(n) << endl;
     return 0;
