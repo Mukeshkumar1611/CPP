@@ -1,0 +1,57 @@
+// Min steps to 1 (memoization)
+
+#include <iostream>
+using namespace std;
+
+int helper(int *arr, int n)
+{
+    if (n == 1)
+    {
+        return 0;
+    }
+
+    if (arr[n] != -1)
+    {
+        return arr[n];
+    }
+
+    int x = helper(arr, n - 1);
+    int y = INT_MAX;
+    int z = INT_MAX;
+
+    if (n % 3 == 0)
+    {
+        y = helper(arr, n / 3);
+    }
+
+    if (n % 2 == 0)
+    {
+        z = helper(arr, n / 2);
+    }
+
+    int ans = 1 + min(x, min(y, z));
+
+    arr[n] = ans;
+    return arr[n];
+}
+
+int countStepsToOne(int n)
+{
+    int *arr = new int[n + 1];
+
+    for (int i = 0; i <= n; i++)
+    {
+        arr[i] = -1;
+    }
+
+    return helper(arr, n);
+}
+
+int main()
+{
+    int n;
+    cout << "Enter number : ";
+    cin >> n;
+
+    cout << "Steps : " << countStepsToOne(n) << endl;
+}
