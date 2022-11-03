@@ -1,0 +1,39 @@
+//  Min Steps to 1 using DP
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int countStepsToOne(int n)
+{
+    int *minSteps = new int[n + 1];
+    minSteps[1] = 0;
+
+    for (int i = 2; i <= n; i++)
+    {
+        int subtractByOne = minSteps[i - 1];
+        int divideByTwo = INT_MAX;
+        int divideByThree = INT_MAX;
+
+        if (i % 2 == 0)
+        {
+            divideByTwo = minSteps[i / 2];
+        }
+
+        if (i % 3 == 0)
+        {
+            divideByThree = minSteps[i / 3];
+        }
+        minSteps[i] = 1 + min(subtractByOne, min(divideByTwo, divideByThree));
+    }
+    int result = minSteps[n];
+    delete[] minSteps;
+    return result;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter number : ";
+    cin >> n;
+    cout << "Number of stes : " << countStepsToOne(n);
+}
