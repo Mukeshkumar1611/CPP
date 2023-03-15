@@ -1,0 +1,51 @@
+#include <bits/stdc++.h> 
+
+// int helper(int idx, vector<int> &weight, vector<int> &value, int maxWeight, vector<vector<int>>&dp)
+// {
+// 	if(idx == 0){
+// 		if(weight[idx] <= maxWeight) return value[idx];
+// 		return 0;
+// 	}
+// 	if(maxWeight < 0) return 0;
+// 	if(dp[idx][maxWeight] != -1) return dp[idx][maxWeight];
+
+	// int notTake = 0 + helper(idx - 1, weight, value, maxWeight, dp);
+	// int take = INT_MIN;
+	// if(weight[idx] <= maxWeight)
+	// {
+	// 	take = value[idx] + helper(idx - 1, weight, value, maxWeight-weight[idx], dp);
+	// } 
+// 	return dp[idx][maxWeight] = max(take, notTake);
+// }
+
+// int knapsack(vector<int> weight, vector<int> value, int n, int maxWeight) 
+// {
+// 	// Write your code here
+// 	vector<vector<int>>dp(n, vector<int>(maxWeight + 1, -1));
+// 	return helper(n-1, weight, value, maxWeight, dp);
+// }
+
+// TABULATION
+
+int knapsack(vector<int> weight, vector<int> value, int n, int maxWeight) 
+{
+	// Write your code here
+	vector<vector<int>>dp(n, vector<int>(maxWeight + 1, 0));
+	for(int w = weight[0]; w <= maxWeight; w++) dp[0][w] = value[0];
+
+	for(int idx = 1; idx < n; idx++){
+		for(int w = 0; w <= maxWeight; w++)
+		{
+			int notTake = 0 + dp[idx - 1][w];
+			int take = INT_MIN;
+			if(weight[idx] <= w)
+			{
+				take = value[idx] + dp[idx - 1][w-weight[idx]];
+			} 
+			dp[idx][w] = max(take, notTake);
+		}
+	}
+
+
+	return dp[n-1][maxWeight];
+}
