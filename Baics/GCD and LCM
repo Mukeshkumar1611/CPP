@@ -1,0 +1,32 @@
+// Programe to find GCD and LCM
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int gcd(int a, int b)
+{
+    int gcd = 1;
+    for (int i = 1; i <= a and i <= b; i++)
+    {
+        if (a % i == 0 and b % i == 0)
+        {
+            gcd = i;
+        }
+    }
+    return gcd;
+}
+
+int lcm(int a, int b)
+{
+    return (a * b) / gcd(a, b);
+}
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+
+    cout << "GCD : " << gcd(a, b) << endl;
+    cout << "LCM : " << lcm(a, b) << endl;
+    return 0;
+}
